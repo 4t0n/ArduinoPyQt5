@@ -1,3 +1,5 @@
+#include <GyverFIFO.h>
+
 #include <FIFO.h>
 #include <GStypes.h>
 #include <GyverStepper2.h>
@@ -29,8 +31,13 @@ void setup() {
 void loop() {
   stepper1.tick();
   parsing();
-  if (digitalRead(LED) == 1){
-    stepper1.setTarget(6000);
+  static uint32_t tmr = 0;
+  if (millis() - tmr > 100) {
+    tmr = millis();
+    Serial.println(stepper1.getTarget());
+  }
+  if (stepper1.ready()){
+    Serial.print(1);
   }
 }
 
@@ -38,22 +45,37 @@ void loop() {
 void parsing() {
   if (serial.available()) {
     GParser data(serial.buf, ',');  // отдаём парсеру
-    int ints[10];           // массив для численных данных
-    data.parseInts(ints);   // парсим в него
+    long ints[10];           // массив для численных данных
+    data.parseLongs(ints);   // парсим в него
     switch (ints[0]) {
       case 0: digitalWrite(LED, ints[1]);
         break;
       case 1:{
-        stepper1.reverse(false);
-        stepper1.setSpeed(500);
+        if (ints[1] == 1){
+          if (ints[2] == 1){
+            stepper1.reverse(false);
+            stepper1.setSpeed(500);
+          }
+          if (ints[2] == 2){
+            stepper1.reverse(true);
+            stepper1.setSpeed(500);
+          }
+          if (ints[2] == 3){
+            stepper1.setSpeed(0);
+          }
+        }
         break;
       }
       case 2:{
-        stepper1.reverse(true);
-        stepper1.setSpeed(500);
+        if (ints[1] == 1){
+          stepper1.setTarget(ints[2]);
+        }
         break;
       }
-      case 3: stepper1.setSpeed(0);
+      case 3:
+        if (ints[1] == 1){
+          stepper1.reset();
+        }
         break;
       case 4:{
         stepper1.setTarget(ints[1]);

@@ -71,7 +71,7 @@ def target_launch():  # движение концевого захвата ро�
         stepper1_const['alpha'] - asin(value_x / (2 * stepper1_const['length']))) + sqrt(
         pow(stepper1_const['b1'], 2) * pow(
             sin(stepper1_const['alpha'] - asin(value_x / (2 * stepper1_const['length']))), 2) - pow(
-            stepper1_const['b1'], 2) + pow(stepper1_const['a1'], 2)))) / 1.75) * 800
+            stepper1_const['b1'], 2) + pow(stepper1_const['a1'], 2)))) / 1.75) * 2048
     serial_send([4, str(int(steps_target))])
 
 
