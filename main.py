@@ -1,7 +1,8 @@
 import sys
 
+from PyQt5 import QtGui
 from PyQt5 import QtWidgets
-
+from PyQt5.QtWinExtras import QtWin
 from coordinates_calculation import CoordinatesCalculation
 from element_steel import ElementColor
 from forArduino import Ui_MainWindow
@@ -9,6 +10,12 @@ from serialport import SerialPort
 from stepper_control import StepperControl
 
 # Конвертация .ui to .py pyuic5 forArduino.ui -o forArduino.py
+
+try:
+    myappid = 'mycompany.myproduct.subproduct.version'                          #  !!!
+    QtWin.setCurrentProcessExplicitAppUserModelID(myappid)                #  !!!    
+except ImportError:
+    pass
 
 
 class MyWindow(QtWidgets.QMainWindow):
@@ -25,9 +32,9 @@ class MyWindow(QtWidgets.QMainWindow):
                                         self.ui.targetLaunch,
                                         1,
                                         )
-        self.frame1 = ElementColor(self.ui.border1, 'red', 'rgb(170, 85, 0)')
+        self.frame1 = ElementColor(self.ui.border1, 'green', 'rgb(170, 85, 0)')
         self.frame2 = ElementColor(self.ui.border2, 'red', 'rgb(170, 85, 0)')
-        self.frame3 = ElementColor(self.ui.border3, 'red', 'rgb(170, 85, 0)')
+        self.frame3 = ElementColor(self.ui.border3, 'green', 'rgb(170, 85, 0)')
         self.frame4 = ElementColor(self.ui.border4, 'red', 'rgb(170, 85, 0)')
         self.operation1 = ElementColor(self.ui.operation1, 'yellow', 'green')
         self.operation2_1 = ElementColor(self.ui.operation2_1,
@@ -162,5 +169,9 @@ class MyWindow(QtWidgets.QMainWindow):
 
 app = QtWidgets.QApplication([])
 application = MyWindow()
+app.setWindowIcon(QtGui.QIcon(
+    'static/icons8-robotic-arm-color-hand-drawn-32.png'))
+application.setWindowIcon(QtGui.QIcon(
+    'static/icons8-robotic-arm-color-hand-drawn-32.png'))
 application.show()
 sys.exit(app.exec())

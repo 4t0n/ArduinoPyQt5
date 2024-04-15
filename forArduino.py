@@ -20,6 +20,7 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QtCore.QSize(1130, 700))
         MainWindow.setMaximumSize(QtCore.QSize(1130, 700))
         MainWindow.setBaseSize(QtCore.QSize(1130, 700))
+        MainWindow.setIconSize(QtCore.QSize(32, 32))
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         MainWindow.setDocumentMode(False)
         MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
@@ -1666,7 +1667,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Robot Manipulator"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Robot Control Panel"))
         self.checkBorder4.setText(_translate("MainWindow", "4"))
         self.checkBorder1.setText(_translate("MainWindow", "1"))
         self.checkBorder2.setText(_translate("MainWindow", "2"))
@@ -1684,9 +1685,9 @@ class Ui_MainWindow(object):
         self.operation1.setText(_translate("MainWindow", "Забор заготовки"))
         self.operation2_1.setText(_translate("MainWindow", "Подача в станок"))
         self.startButton.setText(_translate("MainWindow", "СТАРТ"))
-        self.label_12.setText(_translate("MainWindow", "Сторона №1"))
+        self.label_12.setText(_translate("MainWindow", "Сторона №2"))
         self.operation2_2.setText(_translate("MainWindow", "Приём заготовки"))
-        self.operation3.setText(_translate("MainWindow", "Выдача на стол"))
+        self.operation3.setText(_translate("MainWindow", "Выдача изделия"))
         self.label_4.setText(_translate("MainWindow", "Двигатель №3"))
         self.label_9.setText(_translate("MainWindow", "Значение перемещения"))
         self.valueX_4.setText(_translate("MainWindow", "0"))
