@@ -32,9 +32,9 @@ class MyWindow(QtWidgets.QMainWindow):
                                         self.ui.targetLaunch,
                                         1,
                                         )
-        self.frame1 = ElementColor(self.ui.border1, 'green', 'rgb(170, 85, 0)')
+        self.frame1 = ElementColor(self.ui.border1, 'red', 'rgb(170, 85, 0)')
         self.frame2 = ElementColor(self.ui.border2, 'red', 'rgb(170, 85, 0)')
-        self.frame3 = ElementColor(self.ui.border3, 'green', 'rgb(170, 85, 0)')
+        self.frame3 = ElementColor(self.ui.border3, 'red', 'rgb(170, 85, 0)')
         self.frame4 = ElementColor(self.ui.border4, 'red', 'rgb(170, 85, 0)')
         self.operation1 = ElementColor(self.ui.operation1, 'yellow', 'green')
         self.operation2_1 = ElementColor(self.ui.operation2_1,

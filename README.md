@@ -11,7 +11,7 @@
 * Выбор обрабатываемой стороны
 * 
 ### Stack
-* Python 3.12;
+* Python 3.12
 * PyQT5
 
 ### Как запустить проект на Windows:
@@ -41,6 +41,8 @@ python -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
+
+Запустить main.py.
 
 ### Общий вид приложения
 
