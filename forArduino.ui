@@ -3101,7 +3101,7 @@ QPushButton:checked{background-color:rgb(0,128,0); border: none}
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="valueX_4">
+       <widget class="QLineEdit" name="valueX_3">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -3122,7 +3122,7 @@ QPushButton:checked{background-color:rgb(0,128,0); border: none}
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="targetLaunch_4">
+       <widget class="QPushButton" name="targetLaunch_3">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -3163,7 +3163,7 @@ QPushButton:checked{background-color:rgb(0,128,0); border: none}
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="resetTarget_4">
+       <widget class="QPushButton" name="resetTarget_3">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -3242,7 +3242,7 @@ background-color:rgb(207, 238, 236);
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="valueX">
+       <widget class="QLineEdit" name="valueX_1">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -3263,7 +3263,7 @@ background-color:rgb(207, 238, 236);
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="targetLaunch">
+       <widget class="QPushButton" name="targetLaunch_1">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -3304,7 +3304,7 @@ QPushButton:checked{background-color:rgb(0,128,0); border: none}
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="resetTarget">
+       <widget class="QPushButton" name="resetTarget_1">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -3385,7 +3385,7 @@ background-color:rgb(207, 238, 236);
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="valueX_3">
+       <widget class="QLineEdit" name="valueX_2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -3406,7 +3406,7 @@ background-color:rgb(207, 238, 236);
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="targetLaunch_3">
+       <widget class="QPushButton" name="targetLaunch_2">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -3447,7 +3447,7 @@ QPushButton:checked{background-color:rgb(0,128,0); border: none}
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="resetTarget_3">
+       <widget class="QPushButton" name="resetTarget_2">
         <property name="enabled">
          <bool>false</bool>
         </property>

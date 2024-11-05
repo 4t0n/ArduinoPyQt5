@@ -11,11 +11,11 @@ from stepper_control import StepperControl
 
 # Конвертация .ui to .py pyuic5 forArduino.ui -o forArduino.py
 
-try:
-    myappid = 'mycompany.myproduct.subproduct.version'                          #  !!!
-    QtWin.setCurrentProcessExplicitAppUserModelID(myappid)                #  !!!    
-except ImportError:
-    pass
+# try:
+#     myappid = 'mycompany.myproduct.subproduct.version'
+#     QtWin.setCurrentProcessExplicitAppUserModelID(myappid)
+# except ImportError:
+#     pass
 
 
 class MyWindow(QtWidgets.QMainWindow):
@@ -29,8 +29,22 @@ class MyWindow(QtWidgets.QMainWindow):
                                         self.ui,
                                         self.ui.stepper1Up,
                                         self.ui.stepper1Down,
-                                        self.ui.targetLaunch,
+                                        self.ui.targetLaunch_1,
                                         1,
+                                        )
+        self.stepper_2 = StepperControl(self.serial_port,
+                                        self.ui,
+                                        self.ui.stepper2Up,
+                                        self.ui.stepper2Down,
+                                        self.ui.targetLaunch_2,
+                                        2,
+                                        )
+        self.stepper_3 = StepperControl(self.serial_port,
+                                        self.ui,
+                                        self.ui.stepper3Up,
+                                        self.ui.stepper3Down,
+                                        self.ui.targetLaunch_3,
+                                        3,
                                         )
         self.frame1 = ElementColor(self.ui.border1, 'red', 'rgb(170, 85, 0)')
         self.frame2 = ElementColor(self.ui.border2, 'red', 'rgb(170, 85, 0)')
@@ -44,51 +58,82 @@ class MyWindow(QtWidgets.QMainWindow):
                                          'yellow',
                                          'green')
         self.operation3 = ElementColor(self.ui.operation3, 'yellow', 'green')
-        self.coordinate = CoordinatesCalculation(self.ui)
-        # self.cycle = MainCycle(self.ui, 1, self.ui.checkBorder1,
-        #                        self.ui.checkBorder2,
-        #                        self.ui.checkBorder3, self.ui.checkBorder4)
         self.ui.openSerial.clicked.connect(self.serial_port.open_serial)
         self.ui.closeSerial.clicked.connect(self.serial_port.close_serial)
         self.serial_port.serial.readyRead.connect(self.on_read)
         self.ui.stepper1Up.clicked.connect(self.stepper_1.stepper_up)
-        self.ui.stepper1Up.clicked.connect(self.stepper_down_off)
-        self.ui.stepper1Up.clicked.connect(self.target_launch_off)
+        self.ui.stepper1Up.clicked.connect(self.stepper1_down_off)
+        self.ui.stepper1Up.clicked.connect(self.target1_launch_off)
         self.ui.stepper1Down.clicked.connect(self.stepper_1.stepper_down)
-        self.ui.stepper1Down.clicked.connect(self.stepper_up_off)
-        self.ui.stepper1Down.clicked.connect(self.target_launch_off)
+        self.ui.stepper1Down.clicked.connect(self.stepper1_up_off)
+        self.ui.stepper1Down.clicked.connect(self.target1_launch_off)
         self.ui.stepper1Stop.clicked.connect(self.stepper_1.stepper_stop)
-        self.ui.stepper1Stop.clicked.connect(self.stepper_up_off)
-        self.ui.stepper1Stop.clicked.connect(self.stepper_down_off)
-        self.ui.stepper1Stop.clicked.connect(self.target_launch_off)
-        self.ui.targetLaunch.clicked.connect(self.stepper_1.stepper_go_target)
-        self.ui.targetLaunch.clicked.connect(self.stepper_up_off)
-        self.ui.targetLaunch.clicked.connect(self.stepper_down_off)
-        self.ui.resetTarget.clicked.connect(self.stepper_1.
+        self.ui.stepper1Stop.clicked.connect(self.stepper1_up_off)
+        self.ui.stepper1Stop.clicked.connect(self.stepper1_down_off)
+        self.ui.stepper1Stop.clicked.connect(self.target1_launch_off)
+        self.ui.targetLaunch_1.clicked.connect(self.stepper_1.stepper_go_target_1)
+        self.ui.targetLaunch_1.clicked.connect(self.stepper1_up_off)
+        self.ui.targetLaunch_1.clicked.connect(self.stepper1_down_off)
+        self.ui.resetTarget_1.clicked.connect(self.stepper_1.
+                                            stepper_target_reset)
+        self.ui.stepper2Up.clicked.connect(self.stepper_2.stepper_up)
+        self.ui.stepper2Up.clicked.connect(self.stepper2_down_off)
+        self.ui.stepper2Up.clicked.connect(self.target2_launch_off)
+        self.ui.stepper2Down.clicked.connect(self.stepper_2.stepper_down)
+        self.ui.stepper2Down.clicked.connect(self.stepper2_up_off)
+        self.ui.stepper2Down.clicked.connect(self.target2_launch_off)
+        self.ui.stepper2Stop.clicked.connect(self.stepper_2.stepper_stop)
+        self.ui.stepper2Stop.clicked.connect(self.stepper2_up_off)
+        self.ui.stepper2Stop.clicked.connect(self.stepper2_down_off)
+        self.ui.stepper2Stop.clicked.connect(self.target2_launch_off)
+        self.ui.targetLaunch_2.clicked.connect(self.stepper_2.stepper_go_target_2)
+        self.ui.targetLaunch_2.clicked.connect(self.stepper2_up_off)
+        self.ui.targetLaunch_2.clicked.connect(self.stepper2_down_off)
+        self.ui.resetTarget_2.clicked.connect(self.stepper_2.
+                                            stepper_target_reset)
+        self.ui.stepper3Up.clicked.connect(self.stepper_3.stepper_up)
+        self.ui.stepper3Up.clicked.connect(self.stepper3_down_off)
+        self.ui.stepper3Up.clicked.connect(self.target3_launch_off)
+        self.ui.stepper3Down.clicked.connect(self.stepper_3.stepper_down)
+        self.ui.stepper3Down.clicked.connect(self.stepper3_up_off)
+        self.ui.stepper3Down.clicked.connect(self.target3_launch_off)
+        self.ui.stepper3Stop.clicked.connect(self.stepper_3.stepper_stop)
+        self.ui.stepper3Stop.clicked.connect(self.stepper3_up_off)
+        self.ui.stepper3Stop.clicked.connect(self.stepper3_down_off)
+        self.ui.stepper3Stop.clicked.connect(self.target3_launch_off)
+        self.ui.targetLaunch_3.clicked.connect(self.stepper_3.stepper_go_target_3)
+        self.ui.targetLaunch_3.clicked.connect(self.stepper3_up_off)
+        self.ui.targetLaunch_3.clicked.connect(self.stepper3_down_off)
+        self.ui.resetTarget_3.clicked.connect(self.stepper_3.
                                             stepper_target_reset)
         self.ui.stopButton.clicked.connect(self.start_off)
         self.ui.checkBorder1.stateChanged.connect(self.frame1.change_color)
         self.ui.checkBorder2.stateChanged.connect(self.frame2.change_color)
         self.ui.checkBorder3.stateChanged.connect(self.frame3.change_color)
         self.ui.checkBorder4.stateChanged.connect(self.frame4.change_color)
-        # self.ui.checkBorder1.stateChanged.connect(self.cycle.check_print)
         self.ui.startButton.clicked.connect(self.stepper_1.start_cycle)
+        self.ui.startButton.clicked.connect(self.stepper_2.start_cycle)
+        self.ui.startButton.clicked.connect(self.stepper_3.start_cycle)
         self.ui.startButton.clicked.connect(self.set_on_cycle)
         self.ui.stopButton.clicked.connect(self.stepper_1.stop_cycle)
+        self.ui.stopButton.clicked.connect(self.stepper_2.stop_cycle)
+        self.ui.stopButton.clicked.connect(self.stepper_3.stop_cycle)
         self.ui.mode_slider.valueChanged.connect(self.mode_change)
 
     def mode_change(self):
         self.stepper_1.stepper_stop()
+        self.stepper_2.stepper_stop()
+        self.stepper_3.stepper_stop()
         if self.ui.mode_slider.value() == 1:
             self.ui.startButton.setChecked(False)
             self.ui.startButton.setEnabled(False)
             self.ui.stopButton.setEnabled(False)
-            self.ui.targetLaunch.setEnabled(True)
+            self.ui.targetLaunch_1.setEnabled(True)
+            self.ui.targetLaunch_2.setEnabled(True)
             self.ui.targetLaunch_3.setEnabled(True)
-            self.ui.targetLaunch_4.setEnabled(True)
-            self.ui.resetTarget.setEnabled(True)
+            self.ui.resetTarget_1.setEnabled(True)
+            self.ui.resetTarget_2.setEnabled(True)
             self.ui.resetTarget_3.setEnabled(True)
-            self.ui.resetTarget_4.setEnabled(True)
             self.ui.stepper1Up.setEnabled(True)
             self.ui.stepper1Down.setEnabled(True)
             self.ui.stepper1Stop.setEnabled(True)
@@ -101,15 +146,21 @@ class MyWindow(QtWidgets.QMainWindow):
         else:
             self.ui.stepper1Up.setChecked(False)
             self.ui.stepper1Down.setChecked(False)
-            self.ui.targetLaunch.setChecked(False)
+            self.ui.targetLaunch_1.setChecked(False)
+            self.ui.stepper2Up.setChecked(False)
+            self.ui.stepper2Down.setChecked(False)
+            self.ui.targetLaunch_2.setChecked(False)
+            self.ui.stepper3Up.setChecked(False)
+            self.ui.stepper3Down.setChecked(False)
+            self.ui.targetLaunch_3.setChecked(False)
             self.ui.startButton.setEnabled(True)
             self.ui.stopButton.setEnabled(True)
-            self.ui.targetLaunch.setEnabled(False)
+            self.ui.targetLaunch_1.setEnabled(False)
+            self.ui.targetLaunch_2.setEnabled(False)
             self.ui.targetLaunch_3.setEnabled(False)
-            self.ui.targetLaunch_4.setEnabled(False)
-            self.ui.resetTarget.setEnabled(False)
+            self.ui.resetTarget_1.setEnabled(False)
+            self.ui.resetTarget_2.setEnabled(False)
             self.ui.resetTarget_3.setEnabled(False)
-            self.ui.resetTarget_4.setEnabled(False)
             self.ui.stepper1Up.setEnabled(False)
             self.ui.stepper1Down.setEnabled(False)
             self.ui.stepper1Stop.setEnabled(False)
@@ -120,14 +171,32 @@ class MyWindow(QtWidgets.QMainWindow):
             self.ui.stepper3Down.setEnabled(False)
             self.ui.stepper3Stop.setEnabled(False)
 
-    def stepper_up_off(self):
+    def stepper1_up_off(self):
         self.ui.stepper1Up.setChecked(False)
 
-    def stepper_down_off(self):
+    def stepper1_down_off(self):
         self.ui.stepper1Down.setChecked(False)
 
-    def target_launch_off(self):
-        self.ui.targetLaunch.setChecked(False)
+    def target1_launch_off(self):
+        self.ui.targetLaunch_1.setChecked(False)
+
+    def stepper2_up_off(self):
+        self.ui.stepper2Up.setChecked(False)
+
+    def stepper2_down_off(self):
+        self.ui.stepper2Down.setChecked(False)
+
+    def target2_launch_off(self):
+        self.ui.targetLaunch_2.setChecked(False)
+
+    def stepper3_up_off(self):
+        self.ui.stepper3Up.setChecked(False)
+
+    def stepper3_down_off(self):
+        self.ui.stepper3Down.setChecked(False)
+
+    def target3_launch_off(self):
+        self.ui.targetLaunch_3.setChecked(False)
 
     def start_off(self):
         self.ui.startButton.setChecked(False)
@@ -139,15 +208,14 @@ class MyWindow(QtWidgets.QMainWindow):
         self.on_cycle = False
 
     def on_read(self):
-        # if not serial.canReadLine():
-        #     return     # выходим если нечего читать
         rx = self.serial_port.serial.readLine()
         try:
             rxs = str(rx, 'utf-8').strip()
             data = list(map(str, rxs.split(',')))
+            command = data[0]
             print(data)
             if self.on_cycle:
-                match data[0]:
+                match command:
                     case '0':
                         self.operation1.change_color_progress()
                     case '2':

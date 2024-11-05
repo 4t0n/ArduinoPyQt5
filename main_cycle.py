@@ -6,10 +6,12 @@ from coordinates_calculation import CoordinatesCalculation as CoordCalc
 
 
 class MainCycle(QtWidgets.QMainWindow):
-    def __init__(self,
-                 ui,
-                 stepper_number=1,
-                 *elements,):
+    def __init__(
+        self,
+        ui,
+        stepper_number=1,
+        *elements,
+    ):
         QtWidgets.QWidget.__init__(self)
         self.ui = ui
         self.elements = elements

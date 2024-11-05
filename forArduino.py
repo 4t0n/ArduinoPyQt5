@@ -1101,185 +1101,7 @@ class Ui_MainWindow(object):
         self.label_9.setFont(font)
         self.label_9.setObjectName("label_9")
         self.verticalLayout_5.addWidget(self.label_9)
-        self.valueX_4 = QtWidgets.QLineEdit(self.layoutWidget_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.valueX_4.sizePolicy().hasHeightForWidth())
-        self.valueX_4.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setPointSize(16)
-        self.valueX_4.setFont(font)
-        self.valueX_4.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.valueX_4.setObjectName("valueX_4")
-        self.verticalLayout_5.addWidget(self.valueX_4)
-        self.targetLaunch_4 = QtWidgets.QPushButton(self.layoutWidget_3)
-        self.targetLaunch_4.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.targetLaunch_4.sizePolicy().hasHeightForWidth())
-        self.targetLaunch_4.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.targetLaunch_4.setFont(font)
-        self.targetLaunch_4.setStyleSheet("QPushButton{\n"
-"border: 2px solid black;\n"
-"border-radius: 10px;\n"
-"background-color: rgb(209, 209, 209);\n"
-"}\n"
-"QPushButton:hover{\n"
-"border: 2px solid black;\n"
-"border-radius: 10px;\n"
-"background-color:rgb(207, 238, 236);\n"
-"}\n"
-"QPushButton:checked{background-color:rgb(0,128,0); border: none}\n"
-"")
-        self.targetLaunch_4.setCheckable(True)
-        self.targetLaunch_4.setObjectName("targetLaunch_4")
-        self.verticalLayout_5.addWidget(self.targetLaunch_4)
-        self.resetTarget_4 = QtWidgets.QPushButton(self.layoutWidget_3)
-        self.resetTarget_4.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.resetTarget_4.sizePolicy().hasHeightForWidth())
-        self.resetTarget_4.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.resetTarget_4.setFont(font)
-        self.resetTarget_4.setStyleSheet("QPushButton{\n"
-"border: 2px solid black;\n"
-"border-radius: 10px;\n"
-"background-color: rgb(209, 209, 209);\n"
-"}\n"
-"QPushButton:hover{\n"
-"border: 2px solid black;\n"
-"border-radius: 10px;\n"
-"background-color:rgb(207, 238, 236);\n"
-"}\n"
-"")
-        self.resetTarget_4.setObjectName("resetTarget_4")
-        self.verticalLayout_5.addWidget(self.resetTarget_4)
-        self.layoutWidget1 = QtWidgets.QWidget(self.frame_3)
-        self.layoutWidget1.setGeometry(QtCore.QRect(10, 10, 171, 271))
-        self.layoutWidget1.setObjectName("layoutWidget1")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget1)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.label = QtWidgets.QLabel(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
-        self.label_2 = QtWidgets.QLabel(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName("label_2")
-        self.verticalLayout.addWidget(self.label_2)
-        self.valueX = QtWidgets.QLineEdit(self.layoutWidget1)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.valueX.sizePolicy().hasHeightForWidth())
-        self.valueX.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setPointSize(16)
-        self.valueX.setFont(font)
-        self.valueX.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.valueX.setObjectName("valueX")
-        self.verticalLayout.addWidget(self.valueX)
-        self.targetLaunch = QtWidgets.QPushButton(self.layoutWidget1)
-        self.targetLaunch.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.targetLaunch.sizePolicy().hasHeightForWidth())
-        self.targetLaunch.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.targetLaunch.setFont(font)
-        self.targetLaunch.setStyleSheet("QPushButton{\n"
-"border: 2px solid black;\n"
-"border-radius: 10px;\n"
-"background-color: rgb(209, 209, 209);\n"
-"}\n"
-"QPushButton:hover{\n"
-"border: 2px solid black;\n"
-"border-radius: 10px;\n"
-"background-color:rgb(207, 238, 236);\n"
-"}\n"
-"QPushButton:checked{background-color:rgb(0,128,0); border: none}\n"
-"")
-        self.targetLaunch.setCheckable(True)
-        self.targetLaunch.setObjectName("targetLaunch")
-        self.verticalLayout.addWidget(self.targetLaunch)
-        self.resetTarget = QtWidgets.QPushButton(self.layoutWidget1)
-        self.resetTarget.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.resetTarget.sizePolicy().hasHeightForWidth())
-        self.resetTarget.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.resetTarget.setFont(font)
-        self.resetTarget.setStyleSheet("QPushButton{\n"
-"border: 2px solid black;\n"
-"border-radius: 10px;\n"
-"background-color: rgb(209, 209, 209);\n"
-"}\n"
-"QPushButton:hover{\n"
-"border: 2px solid black;\n"
-"border-radius: 10px;\n"
-"background-color:rgb(207, 238, 236);\n"
-"}\n"
-"")
-        self.resetTarget.setObjectName("resetTarget")
-        self.verticalLayout.addWidget(self.resetTarget)
-        self.layoutWidget_2 = QtWidgets.QWidget(self.frame_3)
-        self.layoutWidget_2.setGeometry(QtCore.QRect(190, 10, 171, 271))
-        self.layoutWidget_2.setObjectName("layoutWidget_2")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.layoutWidget_2)
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.label_3 = QtWidgets.QLabel(self.layoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_3.setFont(font)
-        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_3.setObjectName("label_3")
-        self.verticalLayout_4.addWidget(self.label_3)
-        self.label_8 = QtWidgets.QLabel(self.layoutWidget_2)
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_8.setFont(font)
-        self.label_8.setObjectName("label_8")
-        self.verticalLayout_4.addWidget(self.label_8)
-        self.valueX_3 = QtWidgets.QLineEdit(self.layoutWidget_2)
+        self.valueX_3 = QtWidgets.QLineEdit(self.layoutWidget_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1290,8 +1112,8 @@ class Ui_MainWindow(object):
         self.valueX_3.setFont(font)
         self.valueX_3.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.valueX_3.setObjectName("valueX_3")
-        self.verticalLayout_4.addWidget(self.valueX_3)
-        self.targetLaunch_3 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.verticalLayout_5.addWidget(self.valueX_3)
+        self.targetLaunch_3 = QtWidgets.QPushButton(self.layoutWidget_3)
         self.targetLaunch_3.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -1318,8 +1140,8 @@ class Ui_MainWindow(object):
 "")
         self.targetLaunch_3.setCheckable(True)
         self.targetLaunch_3.setObjectName("targetLaunch_3")
-        self.verticalLayout_4.addWidget(self.targetLaunch_3)
-        self.resetTarget_3 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.verticalLayout_5.addWidget(self.targetLaunch_3)
+        self.resetTarget_3 = QtWidgets.QPushButton(self.layoutWidget_3)
         self.resetTarget_3.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -1344,7 +1166,185 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.resetTarget_3.setObjectName("resetTarget_3")
-        self.verticalLayout_4.addWidget(self.resetTarget_3)
+        self.verticalLayout_5.addWidget(self.resetTarget_3)
+        self.layoutWidget1 = QtWidgets.QWidget(self.frame_3)
+        self.layoutWidget1.setGeometry(QtCore.QRect(10, 10, 171, 271))
+        self.layoutWidget1.setObjectName("layoutWidget1")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget1)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label = QtWidgets.QLabel(self.layoutWidget1)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.label_2 = QtWidgets.QLabel(self.layoutWidget1)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout.addWidget(self.label_2)
+        self.valueX_1 = QtWidgets.QLineEdit(self.layoutWidget1)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.valueX_1.sizePolicy().hasHeightForWidth())
+        self.valueX_1.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.valueX_1.setFont(font)
+        self.valueX_1.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.valueX_1.setObjectName("valueX_1")
+        self.verticalLayout.addWidget(self.valueX_1)
+        self.targetLaunch_1 = QtWidgets.QPushButton(self.layoutWidget1)
+        self.targetLaunch_1.setEnabled(False)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.targetLaunch_1.sizePolicy().hasHeightForWidth())
+        self.targetLaunch_1.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.targetLaunch_1.setFont(font)
+        self.targetLaunch_1.setStyleSheet("QPushButton{\n"
+"border: 2px solid black;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(209, 209, 209);\n"
+"}\n"
+"QPushButton:hover{\n"
+"border: 2px solid black;\n"
+"border-radius: 10px;\n"
+"background-color:rgb(207, 238, 236);\n"
+"}\n"
+"QPushButton:checked{background-color:rgb(0,128,0); border: none}\n"
+"")
+        self.targetLaunch_1.setCheckable(True)
+        self.targetLaunch_1.setObjectName("targetLaunch_1")
+        self.verticalLayout.addWidget(self.targetLaunch_1)
+        self.resetTarget_1 = QtWidgets.QPushButton(self.layoutWidget1)
+        self.resetTarget_1.setEnabled(False)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.resetTarget_1.sizePolicy().hasHeightForWidth())
+        self.resetTarget_1.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.resetTarget_1.setFont(font)
+        self.resetTarget_1.setStyleSheet("QPushButton{\n"
+"border: 2px solid black;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(209, 209, 209);\n"
+"}\n"
+"QPushButton:hover{\n"
+"border: 2px solid black;\n"
+"border-radius: 10px;\n"
+"background-color:rgb(207, 238, 236);\n"
+"}\n"
+"")
+        self.resetTarget_1.setObjectName("resetTarget_1")
+        self.verticalLayout.addWidget(self.resetTarget_1)
+        self.layoutWidget_2 = QtWidgets.QWidget(self.frame_3)
+        self.layoutWidget_2.setGeometry(QtCore.QRect(190, 10, 171, 271))
+        self.layoutWidget_2.setObjectName("layoutWidget_2")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.layoutWidget_2)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.label_3 = QtWidgets.QLabel(self.layoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_3.setFont(font)
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_4.addWidget(self.label_3)
+        self.label_8 = QtWidgets.QLabel(self.layoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_8.setFont(font)
+        self.label_8.setObjectName("label_8")
+        self.verticalLayout_4.addWidget(self.label_8)
+        self.valueX_2 = QtWidgets.QLineEdit(self.layoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.valueX_2.sizePolicy().hasHeightForWidth())
+        self.valueX_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.valueX_2.setFont(font)
+        self.valueX_2.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.valueX_2.setObjectName("valueX_2")
+        self.verticalLayout_4.addWidget(self.valueX_2)
+        self.targetLaunch_2 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.targetLaunch_2.setEnabled(False)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.targetLaunch_2.sizePolicy().hasHeightForWidth())
+        self.targetLaunch_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.targetLaunch_2.setFont(font)
+        self.targetLaunch_2.setStyleSheet("QPushButton{\n"
+"border: 2px solid black;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(209, 209, 209);\n"
+"}\n"
+"QPushButton:hover{\n"
+"border: 2px solid black;\n"
+"border-radius: 10px;\n"
+"background-color:rgb(207, 238, 236);\n"
+"}\n"
+"QPushButton:checked{background-color:rgb(0,128,0); border: none}\n"
+"")
+        self.targetLaunch_2.setCheckable(True)
+        self.targetLaunch_2.setObjectName("targetLaunch_2")
+        self.verticalLayout_4.addWidget(self.targetLaunch_2)
+        self.resetTarget_2 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.resetTarget_2.setEnabled(False)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.resetTarget_2.sizePolicy().hasHeightForWidth())
+        self.resetTarget_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.resetTarget_2.setFont(font)
+        self.resetTarget_2.setStyleSheet("QPushButton{\n"
+"border: 2px solid black;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(209, 209, 209);\n"
+"}\n"
+"QPushButton:hover{\n"
+"border: 2px solid black;\n"
+"border-radius: 10px;\n"
+"background-color:rgb(207, 238, 236);\n"
+"}\n"
+"")
+        self.resetTarget_2.setObjectName("resetTarget_2")
+        self.verticalLayout_4.addWidget(self.resetTarget_2)
         self.layoutWidget2 = QtWidgets.QWidget(self.frame_3)
         self.layoutWidget2.setGeometry(QtCore.QRect(10, 290, 531, 281))
         self.layoutWidget2.setObjectName("layoutWidget2")
@@ -1690,19 +1690,19 @@ class Ui_MainWindow(object):
         self.operation3.setText(_translate("MainWindow", "Выдача изделия"))
         self.label_4.setText(_translate("MainWindow", "Двигатель №3"))
         self.label_9.setText(_translate("MainWindow", "Значение перемещения"))
-        self.valueX_4.setText(_translate("MainWindow", "0"))
-        self.targetLaunch_4.setText(_translate("MainWindow", "Запустить"))
-        self.resetTarget_4.setText(_translate("MainWindow", "Сброс"))
-        self.label.setText(_translate("MainWindow", "Двигатель №1"))
-        self.label_2.setText(_translate("MainWindow", "Значение перемещения"))
-        self.valueX.setText(_translate("MainWindow", "0"))
-        self.targetLaunch.setText(_translate("MainWindow", "Запустить"))
-        self.resetTarget.setText(_translate("MainWindow", "Сброс"))
-        self.label_3.setText(_translate("MainWindow", "Двигатель №2"))
-        self.label_8.setText(_translate("MainWindow", "Значение перемещения"))
         self.valueX_3.setText(_translate("MainWindow", "0"))
         self.targetLaunch_3.setText(_translate("MainWindow", "Запустить"))
         self.resetTarget_3.setText(_translate("MainWindow", "Сброс"))
+        self.label.setText(_translate("MainWindow", "Двигатель №1"))
+        self.label_2.setText(_translate("MainWindow", "Значение перемещения"))
+        self.valueX_1.setText(_translate("MainWindow", "0"))
+        self.targetLaunch_1.setText(_translate("MainWindow", "Запустить"))
+        self.resetTarget_1.setText(_translate("MainWindow", "Сброс"))
+        self.label_3.setText(_translate("MainWindow", "Двигатель №2"))
+        self.label_8.setText(_translate("MainWindow", "Значение перемещения"))
+        self.valueX_2.setText(_translate("MainWindow", "0"))
+        self.targetLaunch_2.setText(_translate("MainWindow", "Запустить"))
+        self.resetTarget_2.setText(_translate("MainWindow", "Сброс"))
         self.stepper1Down.setText(_translate("MainWindow", "Вниз"))
         self.stepper1Up.setText(_translate("MainWindow", "Вверх"))
         self.stepper1Stop.setText(_translate("MainWindow", "Стоп"))

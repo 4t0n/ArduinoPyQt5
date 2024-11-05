@@ -16,24 +16,26 @@
 
 AsyncStream<50> serial(&Serial, ';');   // указываем обработчик и стоп символ
 
-long target = 1000;
+long target1 = 1000;
+long target2 = 1000;
 bool cycle = false;
 bool first_iter = false;
 bool cycle_continue = false;
 long path[][1] = {
-  {target},
-  {0},
-  {target},
-  {0},
-  {target},
-  {0},
-  {target},
-  {0}
+  {target1},
+  {target2},
+  {target1},
+  {target2},
+  {target1},
+  {target2},
+  {target1},
+  {target2}
 };
 
 // количество точек (пусть компилятор сам считает)
 // как вес всего массива / (2+2) байта
 GStepper2<STEPPER4WIRE> stepper1(2048, 11, 9, 10, 8);
+GStepper2<STEPPER4WIRE> stepper2(2048, 7, 6, 5, 4);
 GPlanner<STEPPER4WIRE, 1> planner;
 
 void setup() {
@@ -42,9 +44,16 @@ void setup() {
   stepper1.setAcceleration(200);
   stepper1.setMaxSpeed(500);
   stepper1.setTarget(0);
+  stepper2.setAcceleration(200);
+  stepper2.setMaxSpeed(500);
+  stepper2.setTarget(0);
+  // stepper3.setAcceleration(200);
+  // stepper3.setMaxSpeed(500);
+  // stepper3.setTarget(0);
 
   planner.addStepper(0, stepper1);  // ось 0
-
+  planner.addStepper(1, stepper2);  // ось 1
+  // planner.addStepper(2, stepper3);  // ось 2
   // устанавливаем ускорение и скорость
   planner.setAcceleration(500);
   planner.setMaxSpeed(500);
@@ -63,6 +72,8 @@ void loop() {
 //  }
   planner.tick();
   stepper1.tick();
+  stepper2.tick();
+  // stepper3.tick();
   parsing();
   if (first_iter){
       Serial.println(count);
@@ -106,18 +117,56 @@ void parsing() {
             stepper1.setSpeed(0);
           }
         }
+        if (ints[1] == 2){
+          if (ints[2] == 1){
+            stepper2.reverse(false);
+            stepper2.setSpeed(500);
+          }
+          if (ints[2] == 2){
+            stepper2.reverse(true);
+            stepper2.setSpeed(500);
+          }
+          if (ints[2] == 3){
+            stepper2.setSpeed(0);
+          }
+        }
+        // if (ints[1] == 3){
+        //   if (ints[2] == 1){
+        //     stepper3.reverse(false);
+        //     stepper3.setSpeed(500);
+        //   }
+        //   if (ints[2] == 2){
+        //     stepper3.reverse(true);
+        //     stepper3.setSpeed(500);
+        //   }
+        //   if (ints[2] == 3){
+        //     stepper3.setSpeed(0);
+        //   }
+        // }
         break;
       }
       case 2:{
         if (ints[1] == 1){
           stepper1.setTarget(ints[2]);
         }
+        if (ints[1] == 2){
+          stepper2.setTarget(ints[2]);
+        }
+        // if (ints[1] == 3){
+        //   stepper3.setTarget(ints[2]);
+        // }
         break;
       }
       case 3:
         if (ints[1] == 1){
           stepper1.reset();
         }
+        if (ints[1] == 2){
+          stepper2.reset();
+        }
+        // if (ints[1] == 3){
+        //   stepper3.reset();
+        // }
         break;
       case 4:{
         if (cycle_continue){
@@ -125,11 +174,15 @@ void parsing() {
           cycle_continue = false;
         }
         else{
-          target = ints[1];
-          path[0][0] = target;
-          path[2][0] = target;
-          path[4][0] = target;
-          path[6][0] = target;
+          target1 = ints[1];
+          target2 = ints[2];
+          path[0][0] = target1;
+          path[1][0] = target2;
+          path[2][0] = target1;
+          path[3][0] = target2;
+          path[4][0] = target1;
+          path[5][0] = target2;
+          path[6][0] = target1;
           first_iter = true;
           break;
         }

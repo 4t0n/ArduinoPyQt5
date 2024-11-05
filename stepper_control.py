@@ -5,14 +5,15 @@ from serialport import SerialPort
 
 
 class StepperControl(QtWidgets.QMainWindow):
-    def __init__(self,
-                 serial: SerialPort,
-                 ui,
-                 up_button: QtWidgets.QPushButton,
-                 down_button: QtWidgets.QPushButton,
-                 target_button: QtWidgets.QPushButton,
-                 stepper_number=1,
-                 ):
+    def __init__(
+        self,
+        serial: SerialPort,
+        ui,
+        up_button: QtWidgets.QPushButton,
+        down_button: QtWidgets.QPushButton,
+        target_button: QtWidgets.QPushButton,
+        stepper_number: int,
+    ):
         QtWidgets.QWidget.__init__(self)
         self.ui = ui
         self.serial = serial
@@ -37,36 +38,75 @@ class StepperControl(QtWidgets.QMainWindow):
     def stepper_stop(self):
         self.serial.serial_send([1, self.stepper_number, 3])
 
-    def stepper_go_target(self):
+    def stepper_go_target_1(self):
         if self.target_button.isChecked():
-            self.serial.serial_send([
-                2,
-                self.stepper_number,
-                self.coordinate.get_target(self.stepper_number)
-            ])
+            self.serial.serial_send(
+                [
+                    2,
+                    self.stepper_number,
+                    self.coordinate.get_target(
+                        self.stepper_number,
+                        int(self.ui.valueX_1.displayText()),
+                    ),
+                ]
+            )
+        else:
+            self.serial.serial_send([1, self.stepper_number, 3])
+
+    def stepper_go_target_2(self):
+        if self.target_button.isChecked():
+            self.serial.serial_send(
+                [
+                    2,
+                    self.stepper_number,
+                    self.coordinate.get_target(
+                        self.stepper_number,
+                        int(self.ui.valueX_2.displayText()),
+                    ),
+                ]
+            )
+        else:
+            self.serial.serial_send([1, self.stepper_number, 3])
+
+    def stepper_go_target_3(self):
+        if self.target_button.isChecked():
+            self.serial.serial_send(
+                [
+                    2,
+                    self.stepper_number,
+                    self.coordinate.get_target(
+                        self.stepper_number,
+                        int(self.ui.valueX_3.displayText()),
+                    ),
+                ]
+            )
         else:
             self.serial.serial_send([1, self.stepper_number, 3])
 
     def stepper_go_target_cycle(self):
-        self.serial.serial_send([
-            2,
-            self.stepper_number,
-            self.coordinate.get_cycle_target(self.stepper_number)
-        ])
+        self.serial.serial_send(
+            [
+                2,
+                self.stepper_number,
+                self.coordinate.get_cycle_target(self.stepper_number),
+            ]
+        )
 
     def stepper_go_home(self):
-        self.serial.serial_send([
-            2,
-            self.stepper_number,
-            0
-        ])
+        self.serial.serial_send([2, self.stepper_number, 0])
 
     def stepper_target_reset(self):
         self.serial.serial_send([3, self.stepper_number])
 
     def start_cycle(self):
-        self.serial.serial_send([4, self.coordinate.
-                                 get_cycle_target(self.stepper_number)])
+        self.serial.serial_send(
+            [
+                4,
+                self.coordinate.get_cycle_target(1),
+                self.coordinate.get_cycle_target(2),
+                self.coordinate.get_cycle_target(3),
+            ]
+        )
 
     def stop_cycle(self):
         self.serial.serial_send([5])

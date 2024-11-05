@@ -10,20 +10,12 @@ class ElementColor(QtWidgets.QMainWindow):
 
     def change_color(self, value):
         if value == 2:
-            self.element.setStyleSheet(
-                f'color: {self.color1};'
-            )
+            self.element.setStyleSheet(f'color: {self.color1};')
         else:
-            self.element.setStyleSheet(
-                f'color: {self.color2};'
-            )
+            self.element.setStyleSheet(f'color: {self.color2};')
 
     def change_color_progress(self):
-        self.element.setStyleSheet(
-            f'background-color: {self.color1};'
-        )
+        self.element.setStyleSheet(f'background-color: {self.color1};')
 
     def change_color_finished(self):
-        self.element.setStyleSheet(
-            f'background-color: {self.color2};'
-        )
+        self.element.setStyleSheet(f'background-color: {self.color2};')
